@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class myPlayerCpntroller : MonoBehaviour
 {
-    //public float speed = 10;
+
+    public float speed;
+    public Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +17,19 @@ public class myPlayerCpntroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //If key "A" pressed, move player left by "speed"
-        //If key "D" pressed, move player right by "speed"
+        //If key "A" pressed
+        if (Input.GetKey(KeyCode.A))
+        {
+            //move player left by "speed"
+            rb.AddForce(Vector2.left * speed);
+
+        }
+        //If key "D" pressed
+        if (Input.GetKey(KeyCode.D))
+        {
+            //move player right by "speed"
+            rb.AddForce(Vector2.right * speed);
+
+        }
     }
 }
