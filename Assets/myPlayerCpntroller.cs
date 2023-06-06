@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class myPlayerCpntroller : MonoBehaviour
 {
-    public float speed = 10;
+    //public float speed = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +15,7 @@ public class myPlayerCpntroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //If key "A" pressed, move player left by "speed"
+        //If key "D" pressed, move player right by "speed"
     }
 }
