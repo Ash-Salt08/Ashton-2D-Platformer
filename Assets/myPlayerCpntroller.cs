@@ -6,6 +6,7 @@ public class myPlayerCpntroller : MonoBehaviour
 {
 
     public float speed;
+    public float jumpforce;
     public Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -30,6 +31,12 @@ public class myPlayerCpntroller : MonoBehaviour
             //move player right by "speed"
             rb.AddForce(Vector2.right * speed);
 
+        }
+        //if space pressed while touching ground
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //jump
+            rb.AddForce(Vector2.up * jumpforce);
         }
     }
 }
