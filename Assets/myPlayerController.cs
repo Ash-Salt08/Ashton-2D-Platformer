@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class myPlayerCpntroller : MonoBehaviour
+public class myPlayerController : MonoBehaviour
 {
 
     public float speed;
     public float jumpforce;
     public Rigidbody2D rb;
 
+    public float Coin { get; private set; }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -38,5 +38,17 @@ public class myPlayerCpntroller : MonoBehaviour
             //jump
             rb.AddForce(Vector2.up * jumpforce);
         }
+    }
+
+    //Collision Detect
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "coinPickup")
+        {
+        //Destroy objects
+            Destroy(col.gameObject);
+
+        }
+
     }
 }
