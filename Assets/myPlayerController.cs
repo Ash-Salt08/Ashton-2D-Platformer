@@ -6,6 +6,7 @@ public class myPlayerController : MonoBehaviour
     public float speed;
     public float jumpforce;
     public Rigidbody2D rb;
+    public bool isGrounded;
 
     public float Coin { get; private set; }
 
@@ -33,7 +34,7 @@ public class myPlayerController : MonoBehaviour
 
         }
         //if space pressed while touching ground
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             //jump
             rb.AddForce(Vector2.up * jumpforce);
@@ -51,4 +52,19 @@ public class myPlayerController : MonoBehaviour
         }
 
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        isGrounded = true;
+    }
+
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        isGrounded = false;
+    }
+
+
+
 }
