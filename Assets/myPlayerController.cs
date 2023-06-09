@@ -80,7 +80,7 @@ public class myPlayerController : MonoBehaviour
     {
         if (coll.gameObject.tag == "jumpPad")
         {
-            rb.AddForce(Vector2.up * jumpforce * 3);
+            rb.AddForce(Vector2.up * jumpforce * 2);
         }
     }
 }
