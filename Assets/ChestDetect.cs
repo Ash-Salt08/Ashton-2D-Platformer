@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class ChestDetect : MonoBehaviour
 {
+    private Animator anim;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        //play chest static
-        print("static");
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -18,16 +20,13 @@ public class ChestDetect : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //play chestopen and hold last frame
-        print("open");
+        anim.SetBool("isOpen", true);
 
     }
 
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        //play chest close
-        print("close");
-        //play chest static
+        anim.SetBool("isOpen", false);
     }
 }

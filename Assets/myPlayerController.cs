@@ -54,21 +54,21 @@ public class myPlayerController : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        //if (col.gameObject.tag == "ground")
-        //{
+        if (col.gameObject.tag == "ground")
+        {
         isGrounded = true;
-        //}
+        }
     }
 
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D col)
     {
-        //if (col.gameObject.tag == "ground")
-        //{
+        if (col.gameObject.tag == "ground")
+        {
         isGrounded = false;
-        //}
+        }
     }
 
 
