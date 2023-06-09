@@ -46,7 +46,7 @@ public class myPlayerController : MonoBehaviour
     {
         if (col.gameObject.tag == "coinPickup")
         {
-        //Destroy objects
+            //Destroy objects
             Destroy(col.gameObject);
 
         }
@@ -56,13 +56,19 @@ public class myPlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //if (col.gameObject.tag == "ground")
+        //{
         isGrounded = true;
+        //}
     }
 
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        //if (col.gameObject.tag == "ground")
+        //{
         isGrounded = false;
+        //}
     }
 
 
