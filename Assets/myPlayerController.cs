@@ -7,7 +7,7 @@ public class myPlayerController : MonoBehaviour
     public float jumpforce;
     public Rigidbody2D rb;
     public bool isGrounded;
-    
+
     public float Coin { get; private set; }
 
     // Start is called before the first frame update
@@ -52,25 +52,29 @@ public class myPlayerController : MonoBehaviour
         }
 
     }
-
-
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.tag == "ground")
         {
-        isGrounded = true;
+            isGrounded = true;
         }
     }
 
+    //private void (Collider2D col)
+    //{
+    //if (col.gameObject.tag == "ground")
+    //{
+    // isGrounded = true;
+    //}
+    //}
 
     private void OnTriggerExit2D(Collider2D col)
     {
         if (col.gameObject.tag == "ground")
         {
-        isGrounded = false;
+            isGrounded = false;
         }
     }
-
 
 
 }
