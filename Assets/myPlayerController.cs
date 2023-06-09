@@ -7,13 +7,13 @@ public class myPlayerController : MonoBehaviour
     public float jumpforce;
     public Rigidbody2D rb;
     public bool isGrounded;
-
+    
     public float Coin { get; private set; }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        isGrounded = false;
     }
 
     // Update is called once per frame
