@@ -7,6 +7,7 @@ public class myPlayerController : MonoBehaviour
     public float jumpforce;
     public Rigidbody2D rb;
     public bool isGrounded;
+    public int coins;
 
     public float Coin { get; private set; }
 
@@ -47,6 +48,7 @@ public class myPlayerController : MonoBehaviour
         if (col.gameObject.tag == "coinPickup")
         {
             //Destroy objects
+            coins = coins + 1;
             Destroy(col.gameObject);
 
         }
