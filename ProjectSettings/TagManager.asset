@@ -6,6 +6,7 @@ TagManager:
   tags:
   - coinPickup
   - ground
+  - jumpPad
   layers:
   - Default
   - TransparentFX

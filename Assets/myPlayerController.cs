@@ -76,5 +76,11 @@ public class myPlayerController : MonoBehaviour
         }
     }
 
-
+    private void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "jumpPad")
+        {
+            rb.AddForce(Vector2.up * jumpforce * 3);
+        }
+    }
 }
